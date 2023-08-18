@@ -7,8 +7,9 @@ export const SLayout = css`
 
 export const STitle = css`
     margin-bottom: 10px;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 600;
+    cursor: default;
 `;
 
 export const SListContainer = css`
@@ -24,8 +25,25 @@ export const SListBox = (isSelected) => css`
     ${isSelected && "background-color: #eaeaea;"}
     /* 아래 위 둘 중 하나 사용 결과는 동일 */
     /* background-color: ${isSelected ? "#eaeaea" : "transparent"}; */
+    cursor: pointer;
 `;
 
-export const SListNmae = css`
-    
+export const SListNmae = (isSelected) => css`
+    display: inline-block;
+    flex-grow: 1;
+    margin-left: 5px;
+    font-size: 14px;
+    ${isSelected && "font-weight: 600;"}
+`;
+
+export const SCount = (isSelected) => css`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    width: 30px;
+    height: 20px;
+    font-size: 11px;
+    font-weight: 900;
+    background-color: ${isSelected ? "#fff" : "#eaeaea"};
 `;

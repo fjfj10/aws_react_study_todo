@@ -19,6 +19,7 @@ export const SContainer = css`
 export const STitle = css`
     font-size: 18px;
     font-weight: 600;
+    cursor: default;
 `;
 
 export const SToggleButton = css`
