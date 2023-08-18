@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { Reset } from "styled-reset";
+import MainLayout from "./components/MainLayout/MainLayout";
+import { Global } from "@emotion/react";
+import * as S from "./Styles/Common";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Reset />
+      {/* 전역에 css를 적용시킬 때 Global사용 */}
+      <Global styles={S.GSCommon} />
+      <MainLayout>
+        
+      </MainLayout>
+      
+    </>
   );
 }
 
