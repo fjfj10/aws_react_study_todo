@@ -2,16 +2,15 @@ import React from 'react';
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import * as S from "./Style";
-import { HiMenu,HiSearch } from "react-icons/hi";
+import { HiMenu, HiSearch } from "react-icons/hi";
 import { useRecoilState } from 'recoil';
 import { isSidebarShowState } from "../../../store/sidebarStore";
 
 function Header() {
-    // 직접 접근해 가져오기 때문에 props받을 필요없다
-    const [isSidebarShow, setIsSidebarShow] = useRecoilState(isSidebarShowState);
+    const [ isSidebarShow, setIsSidebarShow ] = useRecoilState(isSidebarShowState);
 
     const handleMenuToggleClick = () => {
-        setIsSidebarShow(isSidebarShow);
+        setIsSidebarShow(!isSidebarShow);
     }
 
     return (
@@ -23,11 +22,12 @@ function Header() {
             {isSidebarShow && (
                 <div css={S.SSearchBox}>
                     <HiSearch css={S.SSearchIcon}/>
-                    <input css={S.SSearchInput} type="text" />
+                    <input css={S.SSSearchInput} type="search" />
                 </div>
             )}
             
         </div>
+        
     );
 }
 

@@ -1,7 +1,7 @@
 import { css } from "@emotion/react";
 
-//Layout -> Container -> Box
-export const SLayout= css`
+// Layout -> Container -> Box
+export const SLayout = css`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -51,9 +51,10 @@ export const SSearchIcon = css`
     left: 5%;
 `;
 
-export const SSearchInput = css`
+export const SSSearchInput = css`
     border: none;
     outline: none;
     width: 100%;
     background-color: transparent;
+    cursor: pointer;
 `;

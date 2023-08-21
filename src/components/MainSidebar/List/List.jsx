@@ -8,7 +8,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 function List({ title, list }) {
     const navigate = useNavigate();
     const location = useLocation();
-    // location.pathname.split("/")[1]문자열을 잘라 today만 들고오기 위함
+    // location.pathname.split("/")[1]문자열을 잘라 today만 들고오기 위함 -> 리스트에 path을 추가하여 문자열로 할 필요 없게됨
     const pathName = location.pathname;
     
     const handleLinkClick = (path) => {

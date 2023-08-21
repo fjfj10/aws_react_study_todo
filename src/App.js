@@ -4,6 +4,7 @@ import { Global } from "@emotion/react";
 import * as S from "./Styles/Common";
 import { Route, Routes } from "react-router-dom";
 import Today from "./pages/Today/Today";
+import Calender from "./pages/Calender/Calender";
 import React, { useState } from 'react';
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
           {/* 경로에는 대문자 쓰는거 아님 */}
           <Route path="/today" element={ <Today /> }/>
           <Route path="/upcomming" />
-          <Route path="/calendar" />
+          <Route path="/calendar" element={ <Calender /> }/>
           <Route path="/stickywall" />
         </Routes>
       </MainLayout>

@@ -7,21 +7,21 @@ import List from './List/List';
 import { useRecoilState } from 'recoil';
 import { isSidebarShowState } from "../../store/sidebarStore";
 
-function MainSidebar(props) {
-    const [isSidebarShow, setIsSidebarShow] = useRecoilState(isSidebarShowState);
+// 어떤 페이지에서든 불러올 수 있어야하기 때문에 MainLayout에 종속
+function MainSidebar() {
+    const [ isSidebarShow, setIsSidebarShow ] = useRecoilState(isSidebarShowState);
     
-
-    // 이부분은 이후 백앤드에서 서버에서 불러오는걸로 처리 예정 지금은 배열로함
-    const [mainMenuListArray, setMainMenuListArray] = useState({
-        tesks: [
+    // 백앤드 배우면 API연결해서 서버에서 가지고 올 예정
+    const [ mainMenuListArray, setMainMenuListArray ] = useState({
+        tasks: [
             {
                 id: 1,
-                path: "/upcomming",
+                path: "/upcoming",
                 icon: "",
-                name: "Upcomming",
+                name: "Upcoming",
                 count: 12
             },
-            { 
+            {
                 id: 2,
                 path: "/today",
                 icon: "",
@@ -41,45 +41,44 @@ function MainSidebar(props) {
                 icon: "",
                 name: "Sticky Wall",
                 count: 0
-            }
+            },
         ],
         lists: [
             {
                 id: 1,
-                path: "/personal",
+                path: "",
                 icon: "",
                 name: "Personal",
                 count: 0
             },
             {
                 id: 2,
-                path: "/work",
+                path: "",
                 icon: "",
                 name: "Work",
                 count: 0
             },
             {
                 id: 3,
-                path: "/list1",
+                path: "",
                 icon: "",
-                name: "List1",
+                name: "List 1",
                 count: 0
             }
         ]
     });
-        
 
     return (
         <div css={S.SLayout(isSidebarShow)}>
-            <Header />
+            <Header/>
             {isSidebarShow && (
-                <>    
-                    <List title={"TASKS"} list={mainMenuListArray.tesks}/>
+                <>
+                    <List title={"TASKS"} list={mainMenuListArray.tasks}/>
                     <List title={"LISTS"} list={mainMenuListArray.lists}/>
                 </>
             )}
+            
         </div>
-        
     );
 }
 

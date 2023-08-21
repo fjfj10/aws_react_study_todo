@@ -6,7 +6,7 @@ export const SLayout = (isShow) => css`
     left: ${isShow ? "0px" : "-210px"};
     border-radius: 10px;
     padding: 20px;
-    width: 250px;
+    width: 240px;
     height: 100%;
     background-color: #f5f5f5;
     overflow: hidden;
